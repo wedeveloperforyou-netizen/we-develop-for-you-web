@@ -24,3 +24,74 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.tech-lines {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(168, 85, 247, 0.15) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      300deg,
+      rgba(34, 211, 238, 0.12) 1px,
+      transparent 1px
+    );
+  background-size: 120px 120px;
+  animation: moveLines 40s linear infinite;
+}
+@keyframes techLine {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-tech-line {
+  animation: techLine 12s linear infinite;
+}
+
+.animate-tech-line-slow {
+  animation: techLine 20s linear infinite;
+}
+
+
+@keyframes moveLines {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(120px, 120px, 0);
+  }
+}
