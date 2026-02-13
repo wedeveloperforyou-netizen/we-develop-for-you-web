@@ -1,23 +1,25 @@
-import Link from "next/link";
-
 export default function CTAHome() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24 text-center">
-      <h2 className="text-3xl font-bold">
-        ¿Hablamos de tu proyecto?
-      </h2>
+    <section className="bg-blue-900">
+      <div className="mx-auto max-w-7xl px-6 py-24 text-center text-white">
 
-      <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-        Cuéntanos tu situación y te ayudamos a encontrar la mejor solución para
-        tu negocio, sin compromiso.
-      </p>
+        <h2 className="text-3xl md:text-4xl font-bold">
+          ¿Listo para optimizar tu empresa?
+        </h2>
 
-      <Link
-        href="/contacto"
-        className="mt-8 inline-block rounded bg-white px-6 py-3 font-medium text-black hover:bg-gray-200 transition"
-      >
-        Contactar
-      </Link>
+        <p className="mt-6 max-w-2xl mx-auto text-blue-100 text-lg">
+          Cuéntanos tu situación y te propondremos una estrategia
+          de digitalización clara, práctica y adaptada a tu negocio.
+        </p>
+
+        <a
+          href="#contacto"
+          className="mt-10 inline-block rounded-lg bg-orange-500 px-8 py-4 font-semibold text-white hover:bg-orange-600 transition shadow-md"
+        >
+          Solicitar diagnóstico gratuito
+        </a>
+
+      </div>
     </section>
   );
 }

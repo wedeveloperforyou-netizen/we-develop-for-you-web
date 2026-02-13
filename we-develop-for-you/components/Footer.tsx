@@ -1,38 +1,93 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function Footer() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.3 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <footer
-      ref={ref}
-      className={`relative mt-32 border-t border-white/10 bg-black py-12 transition-all duration-1000
-      ${
-        visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-10"
-      }`}
-    >
-      {/* Glow */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/10 via-cyan-400/10 to-purple-500/10 blur-2xl" />
+    <footer className="bg-gray-50 border-t border-gray-200 mt-24">
+      <div className="mx-auto max-w-7xl px-6 py-16">
 
-      <div className="text-center text-sm text-gray-400">
-        © 2026 We Develop for You. Todos los derechos reservados.
+        <div className="grid gap-12 md:grid-cols-3">
+
+          {/* Marca */}
+          <div>
+            <Link href="#inicio" className="flex items-center gap-3 group">
+              <img
+                src="/logo.svg"
+                alt="WeDevelop"
+                className="h-10 w-auto group-hover:scale-105 transition"
+              />
+              <img
+                src="/logoMedium.svg"
+                alt="WeDevelop"
+                className="h-6 md:h-8 w-auto"
+              />
+            </Link>
+
+            <p className="mt-6 text-gray-600 leading-relaxed">
+              Soluciones tecnológicas y digitalización para pymes.
+              Automatización, software a medida y cumplimiento normativo.
+            </p>
+          </div>
+
+          {/* Servicios */}
+          <div>
+            <h4 className="text-lg font-semibold text-gray-900">
+              Servicios
+            </h4>
+
+            <ul className="mt-4 space-y-3 text-gray-600">
+              <li>
+                <Link
+                  href="#servicios"
+                  className="hover:text-orange-500 transition"
+                >
+                  Software a medida
+                </Link>
+              </li>
+              <li className="hover:text-orange-500 transition cursor-pointer">
+                Automatización de procesos
+              </li>
+              <li className="hover:text-orange-500 transition cursor-pointer">
+                Digitalización empresarial
+              </li>
+              <li className="hover:text-orange-500 transition cursor-pointer">
+                Cumplimiento normativo
+              </li>
+            </ul>
+          </div>
+
+          {/* Contacto */}
+          <div>
+            <h4 className="text-lg font-semibold text-gray-900">
+              Contacto
+            </h4>
+
+            <ul className="mt-4 space-y-3 text-gray-600">
+              <li>Valencia, España</li>
+              <li>
+                <a
+                  href="mailto:wedevelopforyou@gmail.com"
+                  className="hover:text-orange-500 transition"
+                >
+                  wedevelopforyou@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+34603486877"
+                  className="hover:text-orange-500 transition"
+                >
+                  +34 603 486 877
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div className="mt-12 border-t border-gray-200 pt-6 text-center text-sm text-gray-500">
+          © 2026 We Develop for You. Todos los derechos reservados.
+        </div>
+
       </div>
     </footer>
   );

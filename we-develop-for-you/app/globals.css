@@ -1,97 +1,19 @@
 @import "tailwindcss";
-
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2937;
+  --primary: #1e3a8a;
+  --accent: #f97316;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient {
-  background-size: 300% 300%;
-  animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-}
-
-.tech-lines {
-  position: absolute;
-  inset: -50%;
-  background-image:
-    linear-gradient(
-      120deg,
-      rgba(168, 85, 247, 0.15) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      300deg,
-      rgba(34, 211, 238, 0.12) 1px,
-      transparent 1px
-    );
-  background-size: 120px 120px;
-  animation: moveLines 40s linear infinite;
-}
-@keyframes techLine {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
-.animate-tech-line {
-  animation: techLine 12s linear infinite;
-}
-
-.animate-tech-line-slow {
-  animation: techLine 20s linear infinite;
-}
-
-
-@keyframes moveLines {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(120px, 120px, 0);
-  }
+  font-family: var(--font-geist-sans);
+  margin: 0;
+  padding: 0;
 }
